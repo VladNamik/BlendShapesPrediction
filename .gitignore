@@ -20,5 +20,8 @@
 # File-based project format
 *.iws
 
+# Python cached files
+__pycache__/
+
 # Models-related data
 data/*
