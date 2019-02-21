@@ -38,19 +38,19 @@ if __name__ == "__main__":
 
     # Prepare a dictionary of estimators after instantiating each one of them
     estimators = {
-        "Extra trees": ExtraTreesRegressor(n_estimators=10,
-                                           max_features=32,  # Out of 128
-                                           random_state=MODELS_RANDOM_SEED),
-        "K-nn": KNeighborsRegressor(random_state=MODELS_RANDOM_SEED),
-        "Linear regression": LinearRegression(),
-        "Ridge": RidgeCV(),
-        "Lasso": Lasso(random_state=MODELS_RANDOM_SEED),
-        "ElasticNet": ElasticNet(random_state=MODELS_RANDOM_SEED),
-        "RandomForestRegressor": RandomForestRegressor(max_depth=4, random_state=2),
-        "Decision Tree Regressor": DecisionTreeRegressor(max_depth=5, random_state=MODELS_RANDOM_SEED),
-        "MultiO/P GBR": MultiOutputRegressor(
-            GradientBoostingRegressor(n_estimators=5, random_state=MODELS_RANDOM_SEED)),
-        "MultiO/P AdaB": MultiOutputRegressor(AdaBoostRegressor(n_estimators=5, random_state=MODELS_RANDOM_SEED))
+        # "Extra trees": ExtraTreesRegressor(n_estimators=10,
+        #                                    max_features=32,  # Out of 128
+        #                                    random_state=MODELS_RANDOM_SEED),
+        # "K-nn": KNeighborsRegressor(random_state=MODELS_RANDOM_SEED),
+        # "Linear regression": LinearRegression(),
+        # "Ridge": RidgeCV(),
+        # "Lasso": Lasso(random_state=MODELS_RANDOM_SEED),
+        # "ElasticNet": ElasticNet(random_state=MODELS_RANDOM_SEED),
+        # "RandomForestRegressor": RandomForestRegressor(n_estimators=100, max_depth=10, random_state=MODELS_RANDOM_SEED),
+        # "Decision Tree Regressor": DecisionTreeRegressor(max_depth=10, random_state=MODELS_RANDOM_SEED),
+        # "MultiO/P GBR": MultiOutputRegressor(
+        #     GradientBoostingRegressor(n_estimators=15, random_state=MODELS_RANDOM_SEED)),
+        "MultiO/P AdaB": MultiOutputRegressor(AdaBoostRegressor(n_estimators=15, random_state=MODELS_RANDOM_SEED))
     }
 
     _, y_mse = train_and_predict(estimators=estimators)

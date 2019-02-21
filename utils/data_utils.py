@@ -54,4 +54,4 @@ def read_ds(ds_path):
         input_data_list.append(input_data)
         output_data_list.append(output_data)
 
-    return input_data_list, output_data_list
+    return np.array(input_data_list), np.array(output_data_list)
